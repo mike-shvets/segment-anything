@@ -196,6 +196,9 @@ class SegmentationFrame(uiutils.BaseFrame):
         img_name, img = self.ask_for_image(img_name)
         if img is not None:
             self.image_widget.draw_new_image(img)
+            self.points_mode = list()
+            self.redo_queue = list()
+
             self.image_name = img_name
             self.raw_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
